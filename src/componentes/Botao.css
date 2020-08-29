@@ -1,5 +1,8 @@
 :root {
     --bg-botao: #F0F0F0;
+    --bg-botao-active: #CCC;
+    --bg-botao-operacao: #F83;
+    --bg-botao-operacao-active: rgba(255, 136, 51, 0.6);
     --border-botao: 1px solid #888;
 }
 
@@ -12,10 +15,23 @@
     outline: none;
 }
 
-.Botao.AC {
+.Botao:active {
+    background-color: var(--bg-botao-active);
+}
+
+.Botao.operacao {
+    color: #FFF;
+    background-color: var(--bg-botao-operacao);
+}
+
+.Botao.operacao:active {
+    background-color: var(--bg-botao-operacao-active);
+}
+
+.Botao.triplo {
     grid-column: span 3;
 }
 
-.Botao.B0 {
+.Botao.duplo {
     grid-column: span 2;
 }
