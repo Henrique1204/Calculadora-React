@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Botao from "../componentes/Botao";
+import Display from "../componentes/Display";
 import "./Calculadora.css";
 
 export default class Calculadora extends Component {
@@ -7,6 +8,7 @@ export default class Calculadora extends Component {
     render() {
         return (
             <div className="Calculadora">
+                <Display valor="100" />
                 <Botao legenda="AC" classe="AC" />
                 <Botao legenda="/" />
                 <Botao legenda="7" />

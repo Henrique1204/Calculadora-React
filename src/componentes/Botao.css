@@ -11,3 +11,11 @@
     background-color: var(--bg-botao);
     outline: none;
 }
+
+.Botao.AC {
+    grid-column: span 3;
+}
+
+.Botao.B0 {
+    grid-column: span 2;
+}
