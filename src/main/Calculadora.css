@@ -2,6 +2,16 @@
     width: 235px;
     height: 320px;
     border-radius: 5px;
-    background-color: #F02;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(auto-fit, 48px);
     overflow: hidden;
+}
+
+.Botao.AC {
+    grid-column: span 3;
+}
+
+.Botao.B0 {
+    grid-column: span 2;
 }
