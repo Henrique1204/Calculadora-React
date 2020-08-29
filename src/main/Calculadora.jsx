@@ -41,12 +41,42 @@ export default class Calculadora extends Component {
             const valores = [...this.state["valores"]];
             valores[i] = novoValor;
             this.setState({ valores });
-            console.log(valores);
         }
     }
 
-    setOperacao(valor) {
-        console.log("Você operou!", valor);
+    setOperacao(operacao) {
+        if (this.state["indiceAtual"] === 0) {
+            this.setState({ operacao, indiceAtual: 1, limparDisplay: true });
+        } else {
+            const finalizar = operacao === "=";
+            const operacaoAtual = this.state["operacao"];
+            const valores = [...this.state["valores"]];
+
+            switch(operacaoAtual) {
+                case "/":
+                    valores[0] = valores.reduce((acc, atual) => (acc / atual));
+                    break;
+                case "*":
+                    valores[0] = valores.reduce((acc, atual) => (acc * atual));
+                    break;
+                case "-":
+                    valores[0] = valores.reduce((acc, atual) => (acc - atual));
+                    break;
+                case "+":
+                    valores[0] = valores.reduce((acc, atual) => (acc + atual));
+                    break;
+                default: break;
+            }
+
+            valores[1] = 0;
+            this.setState({
+                valorDisplay: valores[0],
+                operation: (finalizar) ? null : operacao,
+                indiceAtual: (finalizar) ? 0 : 1,
+                limparDisplay: finalizar,
+                valores 
+            });
+        }
     }
 
     render() {
